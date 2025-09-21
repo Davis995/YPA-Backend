@@ -434,17 +434,18 @@ def create_sample_orders(menu_items, tables):
             # Add some menu items to this order
             selected_items = random.sample(menu_items, random.randint(2, 4))
             for item in selected_items:
+                quantity = random.randint(1, 3)
                 order_item, item_created = orderMenuItem.objects.get_or_create(
                     ordermenu=order_menu,
                     item=item,
                     defaults={
-                        "quantity": random.randint(1, 3),
+                        "quantity": quantity,
                         "price": int(item.price),
                         "special_request": random.choice(["", "Extra spicy", "No onions", "Well done"]) if random.random() > 0.7 else ""
                     }
                 )
                 if item_created:
-                    print(f"    - Added {item.name} x{item.quantity}")
+                    print(f"    - Added {item.name} x{quantity}")
     
     return created_orders
 
