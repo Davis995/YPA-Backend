@@ -1,0 +1,24 @@
+# Core Django dependencies
+Django==5.2.6
+djangorestframework==3.16.1
+django-cors-headers==4.7.0
+
+# Database (PostgreSQL)
+psycopg2-binary==2.9.10
+dj-database-url==3.0.1
+
+# Authentication
+djangorestframework-simplejwt==5.5.1
+
+# Image handling
+Pillow==11.3.0
+
+# Production server
+gunicorn==23.0.0
+
+# Environment management
+python-decouple==3.8
+python-dotenv==1.1.1
+
+# Additional utilities (if needed by your project)
+requests==2.32.5
